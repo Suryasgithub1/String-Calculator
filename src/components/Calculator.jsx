@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { add } from '../utils/stringCalculator';
 
 function Calculator() {
   const [numbersInput, setNumbersInput] = useState('');
