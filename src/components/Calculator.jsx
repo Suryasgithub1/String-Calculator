@@ -8,17 +8,13 @@ function Calculator() {
 
   const handleInputChange = (event) => {
     setNumbersInput(event.target.value);
-    setResult(null); // Clear previous result on input change
-    setError(''); // Clear previous error on input change
+    setResult(null); 
+    setError(''); 
   };
 
   const handleCalculate = () => {
     try {
-      // Unescape newline characters from the textarea input before passing to add function.
-      // This is crucial for the custom delimiter format (e.g., "//;\n1;2")
-      // where a literal newline is expected to separate the delimiter definition from the numbers.
       const unescapedInput = numbersInput.replace(/\\n/g, '\n').replace(/\\r/g, '\r');
-      console.log('Calculator: Input after unescaping:', JSON.stringify(unescapedInput)); // Diagnostic log for unescaped input
       const sum = add(unescapedInput);
       setResult(sum);
       setError('');
@@ -65,5 +61,4 @@ function Calculator() {
   );
 }
 
-
-export default Calculator
+export default Calculator;
